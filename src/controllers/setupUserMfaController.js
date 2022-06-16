@@ -30,7 +30,7 @@ class SetupUserMFAController {
 
         await UserRepository.updateUserMfaSecret(userId, mfaSecret);
 
-        await qrcode.toDataURL(secret.otpauth_url, (err, data_url) => {
+        return await qrcode.toDataURL(secret.otpauth_url, (err, data_url) => {
           if (err) {
             return res.status(500).json({ error: "Internal server error" });
           }
