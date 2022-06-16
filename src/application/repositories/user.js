@@ -52,6 +52,10 @@ class UserRepositoryClass {
   async updateUserMfaSecret(id, mfaSecret) {
     return await User.findByIdAndUpdate(id, { mfa_secret: mfaSecret });
   }
+
+  async findUserByEmail(email) {
+    return await User.findOne({ email }, { password: 0, mfa_secret: 0 });
+  }
 }
 
 const UserRepository = new UserRepositoryClass();

@@ -11,7 +11,7 @@ class CreateUserController {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
-      const existsUser = await UserRepository.getUserByEmail(email);
+      const existsUser = await UserRepository.findUserByEmail(email);
 
       if (existsUser) {
         return res.status(400).json({ error: "User already exists" });
@@ -31,11 +31,7 @@ class CreateUserController {
       });
 
       return res.status(201).json({
-        user: {
-          id: existsUser.id,
-          name: existsUser.name,
-          email: existsUser.email,
-        },
+        user,
         token,
       });
     } catch (error) {
