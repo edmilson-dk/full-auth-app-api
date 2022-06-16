@@ -18,9 +18,9 @@ class SetupUserMFAController {
         return res.status(400).json({ error: "User already has MFA enabled" });
       }
 
-      const haveSecret = await UserRepository.getUserMfaSecret(userId);
+      const hasVerificated = await UserRepository.getUserMfaVerificated(userId);
 
-      if (!haveSecret.mfa_secret) {
+      if (!hasVerificated.mfa_verificated) {
         const secret = speakeasy.generateSecret({
           length: 20,
           name: "My MFA App",

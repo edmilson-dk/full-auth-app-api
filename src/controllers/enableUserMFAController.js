@@ -17,6 +17,9 @@ class EnableUserMFAController {
       }
 
       const userSecret = await UserRepository.getUserMfaSecret(userId);
+      const userVerificated = await UserRepository.getUserMfaVerificated(
+        userId
+      );
 
       const isValid = speakeasy.totp.verify({
         secret: userSecret.mfa_secret,
@@ -31,6 +34,10 @@ class EnableUserMFAController {
       }
 
       await UserRepository.updateUserActiveMfa(userId, true);
+
+      if (!userVerificated.mfa_verificated) {
+        await UserRepository.updateUserMfaVerificated(userId, true);
+      }
 
       return res.status(200).json({
         message: "MFA enabled successfully",

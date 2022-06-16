@@ -22,6 +22,10 @@ const userSchema = new db.Schema({
     type: String,
     default: null,
   },
+  mfa_verificated: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const User = db.model("User", userSchema);
