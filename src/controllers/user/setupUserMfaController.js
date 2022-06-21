@@ -1,7 +1,7 @@
 const speakeasy = require("speakeasy");
 const qrcode = require("qrcode");
 
-const { UserRepository } = require("../application/repositories/user");
+const { UserRepository } = require("../../application/repositories/user");
 
 class SetupUserMFAController {
   async handle(req, res) {

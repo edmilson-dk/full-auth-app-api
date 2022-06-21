@@ -1,6 +1,6 @@
-const { UserRepository } = require("../application/repositories/user");
-const { hash, compareHash } = require("../shared/security/hash");
-const { createJWT } = require("../shared/security/jwt");
+const { UserRepository } = require("../../application/repositories/user");
+const { hash, compareHash } = require("../../shared/security/hash");
+const { createJWT } = require("../../shared/security/jwt");
 
 class GetUserDataController {
   async handle(req, res) {

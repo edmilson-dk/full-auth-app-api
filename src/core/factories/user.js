@@ -1,24 +1,12 @@
 const {
   CreateUserController,
-} = require("../../controllers/createUserController");
-const {
   DisableUserMFAController,
-} = require("../../controllers/disableUserMfaController");
-const {
   EnableUserMFAController,
-} = require("../../controllers/enableUserMFAController");
-const {
   GetUserDataController,
-} = require("../../controllers/getUserDataController");
-const {
   LoginUserController,
-} = require("../../controllers/loginUserController");
-const {
   MFAUserAuthenticationController,
-} = require("../../controllers/mfaUserAuthenticationController");
-const {
   SetupUserMFAController,
-} = require("../../controllers/setupUserMfaController");
+} = require("../../controllers/user");
 
 const createUserController = new CreateUserController();
 const loginUserController = new LoginUserController();

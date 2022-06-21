@@ -1,6 +1,6 @@
 const speakeasy = require("speakeasy");
 
-const { UserRepository } = require("../application/repositories/user");
+const { UserRepository } = require("../../application/repositories/user");
 
 class DisableUserMFAController {
   async handle(req, res) {

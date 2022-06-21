@@ -1,7 +1,7 @@
 const speakeasy = require("speakeasy");
 
-const { UserRepository } = require("../application/repositories/user");
-const { createJWT } = require("../shared/security/jwt");
+const { UserRepository } = require("../../application/repositories/user");
+const { createJWT } = require("../../shared/security/jwt");
 
 class MFAUserAuthenticationController {
   async handle(req, res) {
